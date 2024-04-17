@@ -1,9 +1,8 @@
-package ru.shop.Repositories;
+package ru.shop.repositories;
 
 import java.util.ArrayList;
 import java.util.List;
-import ru.shop.Entities.Product;
-import ru.shop.Interfaces.Repository;
+import ru.shop.entity.Product;
 
 public class ProductRepository implements Repository<Product> {
     List<Product> products = new ArrayList<>();
@@ -12,7 +11,7 @@ public class ProductRepository implements Repository<Product> {
         products.add(product);
     }
     public List<Product> findAll(){
-        ArrayList<Product> products_copy = new ArrayList<Product>(products);
-        return products_copy;
+        ArrayList<Product> productsCopy = new ArrayList<Product>(products);
+        return productsCopy;
     }
 }

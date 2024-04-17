@@ -2,19 +2,19 @@ package ru.shop;
 
 import java.util.*;
 
-import ru.shop.Entities.Customer;
-import ru.shop.Entities.Order;
-import ru.shop.Entities.Product;
-import ru.shop.Entities.ProductType;
-import ru.shop.Repositories.ProductRepository;
-import ru.shop.Repositories.CustomerRepository;
-import ru.shop.Repositories.OrderRepository;
-import ru.shop.Services.CustomerService;
-import ru.shop.Services.OrderService;
-import ru.shop.Services.ProductService;
+import ru.shop.entity.Customer;
+import ru.shop.entity.Order;
+import ru.shop.entity.Product;
+import ru.shop.entity.ProductType;
+import ru.shop.repositories.ProductRepository;
+import ru.shop.repositories.CustomerRepository;
+import ru.shop.repositories.OrderRepository;
+import ru.shop.services.CustomerService;
+import ru.shop.services.OrderService;
+import ru.shop.services.ProductService;
 
 public class Main {
-    public static <Map> void main(String[] args) {
+    public static void main(String[] args) {
 
     ProductRepository productRepo = new ProductRepository();
     ProductService productService = new ProductService(productRepo);
@@ -78,7 +78,7 @@ public class Main {
         System.out.printf("Заказчик с ID=%s: Количество заказов=%d \n", item.getKey(), item.getValue());
     }
         // Суммы для оплаты в разрезе по заказчикам
-    System.out.printf("\nСуммы для оплаты в разрезе по заказчикам:\n");
+    System.out.print("\nСуммы для оплаты в разрезе по заказчикам:\n");
     for (var customer: listOfCustomer){
         var customerId = customer.getCustomerId();
         System.out.printf("Заказчик с ID=%s: Сумма для оплаты=%d \n", customerId,orderService.getTotalCustomerAmount(customerId));

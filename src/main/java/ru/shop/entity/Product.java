@@ -1,7 +1,7 @@
-package ru.shop.Entities;
+package ru.shop.entity;
 
 public record Product(String id, String name, long cost, ProductType productType) {
-    public Product{
+    public Product {
         // проверки
         if (cost < 0){
             throw new IllegalArgumentException("cost should be greater than 0");

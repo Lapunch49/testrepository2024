@@ -1,9 +1,8 @@
-package ru.shop.Repositories;
+package ru.shop.repositories;
 
 import java.util.ArrayList;
 import java.util.List;
-import ru.shop.Entities.Customer;
-import ru.shop.Interfaces.Repository;
+import ru.shop.entity.Customer;
 
 public class CustomerRepository implements Repository<Customer> {
     List<Customer> customers = new ArrayList<>();

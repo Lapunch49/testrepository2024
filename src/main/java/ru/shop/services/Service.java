@@ -1,6 +1,4 @@
-package ru.shop.Interfaces;
-
-import ru.shop.Entities.Customer;
+package ru.shop.services;
 
 import java.util.List;
 

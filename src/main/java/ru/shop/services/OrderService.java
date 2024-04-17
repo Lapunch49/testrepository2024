@@ -1,14 +1,14 @@
-package ru.shop.Services;
+package ru.shop.services;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 import java.util.UUID;
 
-import ru.shop.Entities.Customer;
-import ru.shop.Entities.Order;
-import ru.shop.Entities.Product;
-import ru.shop.Interfaces.Service;
-import ru.shop.Repositories.OrderRepository;
+import ru.shop.entity.Customer;
+import ru.shop.entity.Order;
+import ru.shop.entity.Product;
+import ru.shop.repositories.OrderRepository;
 
 public class OrderService implements Service<Order> {
     private final OrderRepository orderRepository;
@@ -35,9 +35,9 @@ public class OrderService implements Service<Order> {
         return orderRepository.findAll();
     }
     public List<Order> findByCustomer(String customerId){
-        List<Order> newOrders = new ArrayList<Order>();
-        for (Order order : orderRepository.orders) {
-            if (order.customerId() == customerId) {
+        List<Order> newOrders = new ArrayList<>();
+        for (Order order : orderRepository.findAll()) {
+            if (Objects.equals(order.customerId(), customerId)) {
                 newOrders.add(order);
             }
         }

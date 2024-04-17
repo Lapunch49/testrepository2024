@@ -1,3 +1,3 @@
-package ru.shop.Entities;
+package ru.shop.entity;
 
 public enum ProductType {GOOD, SERVICE}

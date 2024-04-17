@@ -1,15 +1,14 @@
-package ru.shop.Services;
+package ru.shop.services;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import ru.shop.Entities.Product;
-import ru.shop.Entities.ProductType;
-import ru.shop.Interfaces.Service;
-import ru.shop.Repositories.ProductRepository;
+import ru.shop.entity.Product;
+import ru.shop.entity.ProductType;
+import ru.shop.repositories.ProductRepository;
 
 public class ProductService implements Service<Product> {
-    ProductRepository productRepository;
+    private final ProductRepository productRepository;
     public ProductService(ProductRepository productRepository){
         this.productRepository = productRepository;
     }
@@ -20,9 +19,9 @@ public class ProductService implements Service<Product> {
         return productRepository.findAll();
     }
     public List<Product> findByProductType(ProductType productType){
-        List<Product> products_copy = productRepository.findAll();
+        List<Product> productsСopy = productRepository.findAll();
         List<Product> productsByProductType =  new ArrayList<Product>();
-        for (Product product : products_copy) {
+        for (Product product : productsСopy) {
             if (product.getProductType() == productType) {
                 productsByProductType.add(product);
             }

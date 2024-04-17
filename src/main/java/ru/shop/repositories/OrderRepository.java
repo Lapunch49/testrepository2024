@@ -1,13 +1,12 @@
-package ru.shop.Repositories;
+package ru.shop.repositories;
 
 import java.util.ArrayList;
 import java.util.List;
-import ru.shop.Entities.Order;
-import ru.shop.Interfaces.Repository;
+import ru.shop.entity.Order;
 
 
 public class OrderRepository implements Repository<Order> {
-    public List<Order> orders = new ArrayList<>();
+    List<Order> orders = new ArrayList<>();
 
     public void save(Order order){
         orders.add(order);

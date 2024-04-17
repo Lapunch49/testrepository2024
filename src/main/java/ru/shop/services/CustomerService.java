@@ -1,13 +1,12 @@
-package ru.shop.Services;
+package ru.shop.services;
 
 import java.util.List;
 
-import ru.shop.Entities.Customer;
-import ru.shop.Interfaces.Service;
-import ru.shop.Repositories.CustomerRepository;
+import ru.shop.entity.Customer;
+import ru.shop.repositories.CustomerRepository;
 
 public class CustomerService implements Service<Customer> {
-    CustomerRepository customerRepository;
+    private final CustomerRepository customerRepository;
     public CustomerService(CustomerRepository customerRepository){
         this.customerRepository = customerRepository;
     }
